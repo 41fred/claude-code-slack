@@ -52,6 +52,24 @@ Mention `@YourBot` in any channel, DM it directly, or use the optional `/claude`
 - Your workspace stays on your machine — the worker only routes messages
 - Thread context is preserved (the daemon fetches Slack thread history)
 
+### Your repos stay separate
+
+The daemon and your project don't need to live in the same folder. The daemon installs to its own directory (`~/claude-code-slack/` by default), and `WORKSPACE_DIR` in its `.env` file points to wherever your repo clone lives. They're completely independent.
+
+Claude Code runs inside `WORKSPACE_DIR`, so it automatically picks up any `CLAUDE.md` file in that repo. This means you can give Claude project-specific instructions that apply to every Slack command:
+
+```markdown
+# CLAUDE.md (in your project repo root)
+
+This is a Next.js 14 app with App Router.
+- Tests are in __tests__/ — run with `npm test`
+- Never modify .env or .env.local
+- API routes are in app/api/
+- We use Tailwind CSS and shadcn/ui
+```
+
+When someone asks `@Bot how do I add a new API route?`, Claude already knows your project structure and conventions.
+
 ## Features
 
 - **Slash commands** — `/claude <anything>` from any channel
