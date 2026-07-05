@@ -1,5 +1,7 @@
 # Claude Code Slack
 
+![Claude in Slack, without API costs — a self-hosted bridge to Claude Code](assets/social-preview.png)
+
 Let your team talk to [Claude Code](https://docs.anthropic.com/en/docs/claude-code) directly from Slack. Claude runs locally on your machine using your existing Claude plan — no API keys, no per-token costs. Your codebase, your CLAUDE.md, your MCP tools — all accessible through a Slack message.
 
 ```
